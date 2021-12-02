@@ -1,9 +1,14 @@
+import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 
 export default function NavBar() {
     return (
-        <div>
-            <h1>NavBar</h1>
-        </div>
+        <Box sx={{flexGrow: 1}}>
+            <AppBar>
+                <Toolbar>
+                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>Mutodo</Typography>
+                </Toolbar>
+            </AppBar>
+        </Box>
     )
 }
