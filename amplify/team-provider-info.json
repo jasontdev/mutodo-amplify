@@ -10,6 +10,11 @@
       "StackName": "amplify-mutodo-dev-192226",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:124174871085:stack/amplify-mutodo-dev-192226/377028d0-5288-11ec-8f6d-0a2d43e1b04a",
       "AmplifyAppId": "dh8wqidpmcu7p"
+    },
+    "categories": {
+      "auth": {
+        "mutodod09b3e39": {}
+      }
     }
   }
 }

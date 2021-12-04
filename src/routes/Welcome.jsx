@@ -16,7 +16,7 @@ export default function Welcome() {
           Welcome to Mutodo
         </Typography>
         <Typography variant="h6" component="div" align="center" sx={{ mb: 3 }}>
-          Multi-user todo application
+          Multi-user task management for teams and organisations.
         </Typography>
         <Typography variant="body1" component="div">
           Mutodo is a product designed to help individuals and organisations
