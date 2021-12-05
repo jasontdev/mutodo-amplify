@@ -4,7 +4,7 @@ import { Auth } from "aws-amplify";
 
 const AuthContext = createContext(null);
 
-function useAuth() {
+export function useAuth() {
   return useContext(AuthContext);
 }
 
@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState();
 
   const signIn = (username, password) => {
-    Auth.signIn(username, password).then((cognitoUser) => setUser(cognitoUser));
+    return Auth.signIn(username, password).then((user) => setUser(user));
   };
 
   const signOut = () => {
@@ -24,15 +24,13 @@ export function AuthProvider({ children }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-function RequireAuth({children}) {
-    const auth = useAuth();
+export function RequireAuth({ children }) {
+  const auth = useAuth();
 
-    if(!auth.user) {
-        // TODO: after login, user should be redirected to page they are trying to access
-        return <Navigate to="/login" />
-    } else {
-        return children;
-    }
+  if (!auth.user) {
+    // TODO: after login, user should be redirected to page they are trying to access
+    return <Navigate to="/login" />;
+  } else {
+    return children;
+  }
 }
-
-export { useAuth };

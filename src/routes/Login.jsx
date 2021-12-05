@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import { Button, Container, Stack, TextField, Typography } from "@mui/material";
-import NavBar from "../components/NavBar";
+import { Button, Stack, TextField } from "@mui/material";
+import Page from "../components/Page";
 import { useAuth } from "../Auth";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const auth = useAuth();
 
   function signInToAmplify() {
     // auth.signIn should really be returning a promise here
-    auth.signIn(username, password);
+    auth
+      .signIn(username, password)
+      .then(() => navigate("/home"))
+      .catch((error) => {
+        if ((error.code = "PasswordResetRequired")) {
+          navigate("/password-reset");
+          console.log("Password reset required");
+        }
+      });
   }
 
   return (
-    <div>
-      <NavBar />
-      <Container maxWidth="sm">
-        <Typography
-          variant="h3"
-          component="div"
-          sx={{ mt: 5, mb: 3 }}
-          align="center"
-        >
-          Login to Mutodo
-        </Typography>
+      <Page heading="Login to Mutodo">
         <Stack spacing={2}>
           <TextField
             id="username"
@@ -42,7 +42,6 @@ export default function Login() {
             Login
           </Button>
         </Stack>
-      </Container>
-    </div>
+      </Page>
   );
 }
