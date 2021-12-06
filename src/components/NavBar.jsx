@@ -1,8 +1,8 @@
 import React from "react";
-import {AppBar, Box, Button, IconButton, Toolbar, Typography} from "@mui/material";
-import {AccountCircle} from "@mui/icons-material";
+import {AppBar, Box, Button, Toolbar, Typography} from "@mui/material";
 import {useAuth} from "../Auth";
 import {useNavigate} from "react-router";
+import AccountMenu from "./AccountMenu";
 
 export default function NavBar() {
   const auth = useAuth();
@@ -10,12 +10,7 @@ export default function NavBar() {
 
   const loginAndRegisterButtons = () => {
     if (auth.user) {
-      return <IconButton
-        size="large"
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-      ><AccountCircle/></IconButton>
+      return <AccountMenu/>;
     } else {
       return (<div>
         <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
