@@ -1,10 +1,11 @@
 import React from "react";
-import {AppBar, Box, Button, Toolbar, Typography} from "@mui/material";
+import { AppBar as MuiAppBar, Box, Button, Toolbar, Typography} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import {useAuth} from "../Auth";
 import {useNavigate} from "react-router";
 import AccountMenu from "./AccountMenu";
 
-export default function NavBar() {
+export default function AppBar({menuOpen}) {
   const auth = useAuth();
   const navigate = useNavigate();
 
@@ -19,14 +20,18 @@ export default function NavBar() {
     }
   };
   return (<Box sx={{flexGrow: 1}}>
-    <AppBar position="sticky">
+    <MuiAppBar position="fixed" sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}>
       <Toolbar>
+        <Button color="inherit" size="x-large" onClick={() => menuOpen((prev) => !prev)}>
+          <MenuIcon/>
+        </Button>
         <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
           Mutodo
         </Typography>
         {loginAndRegisterButtons()}
       </Toolbar>
-    </AppBar>
-  </Box>);
+    </MuiAppBar>
+  </Box>)
+    ;
 }
 

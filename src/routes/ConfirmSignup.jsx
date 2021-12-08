@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Stack, TextField } from "@mui/material";
 import { Auth } from "aws-amplify";
-import Page from "../components/Page";
+import Layout from "../components/Layout";
 import { Navigate } from "react-router";
 
 export default function ConfirmSignup() {
@@ -18,7 +18,7 @@ export default function ConfirmSignup() {
   }
 
   return (
-    <Page heading="Complete signup">
+    <Layout heading="Complete signup">
       <Stack spacing={2}>
         <TextField
           id="username"
@@ -34,6 +34,6 @@ export default function ConfirmSignup() {
           Confirm
         </Button>
       </Stack>
-    </Page>
+    </Layout>
   );
 }

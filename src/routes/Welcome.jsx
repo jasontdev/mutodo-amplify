@@ -1,11 +1,11 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import Page from "../components/Page";
+import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 
 export default function Welcome() {
   return (
-    <Page heading="Welcome to Mutodo">
+    <Layout heading="Welcome to Mutodo">
       <Typography variant="h6" component="div" align="center" sx={{ mb: 3 }}>
         Multi-user task management for teams and organisations.
       </Typography>
@@ -16,6 +16,6 @@ export default function Welcome() {
         <br />
         New to Mutodo? Sign up <Link to="/signup">here</Link>.
       </Typography>
-    </Page>
+    </Layout>
   );
 }

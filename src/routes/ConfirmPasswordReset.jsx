@@ -2,7 +2,7 @@ import { Auth } from "@aws-amplify/auth";
 import { Button, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import Page from "../components/Page";
+import Layout from "../components/Layout";
 
 export default function ConfirmPasswordReset() {
   const [username, setUsername] = useState("");
@@ -18,7 +18,7 @@ export default function ConfirmPasswordReset() {
   }
 
   return (
-    <Page heading="Complete password reset">
+    <Layout heading="Complete password reset">
       <Stack spacing={2}>
         <TextField
           id="username"
@@ -40,6 +40,6 @@ export default function ConfirmPasswordReset() {
           Reset
         </Button>
       </Stack>
-    </Page>
+    </Layout>
   );
 }

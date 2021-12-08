@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Stack, TextField, Typography } from "@mui/material";
-import Page from "../components/Page";
+import Layout from "../components/Layout";
 import Auth from "@aws-amplify/auth";
 import { useNavigate } from "react-router";
 
@@ -20,7 +20,7 @@ export default function Signup() {
   };
 
   return (
-    <Page heading="Sign up for Mutodo">
+    <Layout heading="Sign up for Mutodo">
       <Stack spacing={2}>
         <TextField
           id="email"
@@ -40,6 +40,6 @@ export default function Signup() {
           Sign up
         </Button>
       </Stack>
-    </Page>
+    </Layout>
   );
 }

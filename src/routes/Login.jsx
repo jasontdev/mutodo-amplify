@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Stack, TextField } from "@mui/material";
-import Page from "../components/Page";
+import Layout from "../components/Layout";
 import { useAuth } from "../Auth";
 import { useNavigate } from "react-router";
 
@@ -25,7 +25,7 @@ export default function Login() {
   }
 
   return (
-      <Page heading="Login to Mutodo">
+      <Layout heading="Login to Mutodo">
         <Stack spacing={2}>
           <TextField
             id="username"
@@ -42,6 +42,6 @@ export default function Login() {
             Login
           </Button>
         </Stack>
-      </Page>
+      </Layout>
   );
 }

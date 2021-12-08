@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Stack, TextField, Typography } from "@mui/material";
-import Page from "../components/Page";
+import Layout from "../components/Layout";
 import Auth from "@aws-amplify/auth";
 
 export default function PasswordReset() {
@@ -14,7 +14,7 @@ export default function PasswordReset() {
   }
 
   return (
-    <Page heading="Reset password">
+    <Layout heading="Reset password">
       {emailSent ? (
         <Typography>
           A password reset link has been sent to your email.
@@ -37,6 +37,6 @@ export default function PasswordReset() {
           </Button>
         </Stack>
       )}
-    </Page>
+    </Layout>
   );
 }
