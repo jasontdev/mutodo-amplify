@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "mutodod09b3e39_identitypool_d09b3e39",
+    "identityPoolName": "mutodo134e7d2e_identitypool_134e7d2e",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "mutodod09b3e39",
-    "userPoolName": "mutodod09b3e39_userpool_d09b3e39",
+    "resourceNameTruncated": "mutodo134e7d2e",
+    "userPoolName": "mutodo134e7d2e_userpool_134e7d2e",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,15 +31,20 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "mutodod09b3e39_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "mutodo134e7d2e_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "d09b3e39",
-    "resourceName": "mutodod09b3e39",
+    "sharedId": "134e7d2e",
+    "resourceName": "mutodo134e7d2e",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
+    "useDefault": "defaultSocial",
+    "hostedUI": true,
     "usernameAttributes": [
       "email"
     ],
+    "hostedUIDomainName": "mutodo134e7d2e-134e7d2e",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/signin/success/\"],\"LogoutURLs\":[\"http://localhost:3000/signout/success/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
