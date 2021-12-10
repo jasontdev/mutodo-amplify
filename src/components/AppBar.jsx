@@ -22,7 +22,7 @@ export default function AppBar({menuOpen}) {
   return (<Box sx={{flexGrow: 1}}>
     <MuiAppBar position="fixed" sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}>
       <Toolbar>
-        <Button color="inherit" size="x-large" onClick={() => menuOpen((prev) => !prev)}>
+        <Button color="inherit" size="x-large">
           <MenuIcon/>
         </Button>
         <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
