@@ -13,7 +13,9 @@
     },
     "categories": {
       "auth": {
-        "mutodo134e7d2e": {}
+        "mutodo134e7d2e": {
+          "googleClientId": "440312261569-7p38f0uifpirnlrlohr76eskd6oc327s.apps.googleusercontent.com"
+        }
       }
     }
   }

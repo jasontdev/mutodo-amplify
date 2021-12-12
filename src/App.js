@@ -1,12 +1,10 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Welcome from "./routes/Welcome";
-import Login from "./routes/Login";
+import Signin from "./routes/Signin";
 import Signup from "./routes/Signup";
-import ConfirmSignup from "./routes/ConfirmSignup";
-import PasswordReset from "./routes/PasswordReset";
-import ConfirmPasswordReset from "./routes/ConfirmPasswordReset";
 import {AuthProvider, RequireAuth} from "./Auth";
 import Home from "./routes/Home";
+import SigninSuccess from "./routes/SigninSuccess";
 
 function App() {
   return (
@@ -15,14 +13,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Welcome/>}/>
-            <Route path="/login" element={<Login/>}/>
+            <Route path="/signin" element={<Signin/>}/>
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/confirm-signup" element={<ConfirmSignup/>}/>
-            <Route path="/password-reset" element={<PasswordReset/>}/>
-            <Route
-              path="/confirm-password-reset"
-              element={<ConfirmPasswordReset/>}
-            />
+            <Route path="/signin/success" element={<SigninSuccess/>}/>
             <Route
               path="/home"
               element={

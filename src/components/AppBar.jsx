@@ -14,7 +14,7 @@ export default function AppBar({menuOpen}) {
       return <AccountMenu/>;
     } else {
       return (<div>
-        <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
+        <Button color="inherit" onClick={() => navigate('/signin')}>Sign in</Button>
         <Button color="inherit" onClick={() => navigate('/signup')}>Sign Up</Button>
       </div>);
     }
