@@ -27,7 +27,6 @@ export function AuthProvider({children}) {
   }
 
   useEffect(() => {
-    console.log('useEffect() called on AuthProvider()');
     Hub.listen('auth', ({payload: {event, data}}) => {
       switch (event) {
         case 'signIn':
