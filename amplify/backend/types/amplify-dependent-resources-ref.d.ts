@@ -12,5 +12,12 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string",
             "GoogleWebClient": "string"
         }
+    },
+    "api": {
+        "mutodo": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
     }
 }
