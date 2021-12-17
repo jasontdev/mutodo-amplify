@@ -1,22 +1,22 @@
 # This "input" configures a global authorization rule to enable public access to
-# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/auth
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
-type Blog @model {
-  id: ID!
-  name: String!
-  posts: [Post] @hasMany
+type User @model {
+    id: ID!
+    taskLists: [TaskList] @manyToMany(relationName: "TaskListUsers")
 }
 
-type Post @model {
-  id: ID!
-  title: String!
-  blog: Blog @belongsTo
-  comments: [Comment] @hasMany
+type TaskList @model {
+    id: ID!
+    title: String!
+    tasks: [Task] @hasMany
+    users: [User] @manyToMany(relationName: "TaskListUsers")
 }
 
-type Comment @model {
-  id: ID!
-  post: Post @belongsTo
-  content: String!
+type Task @model {
+    id: ID!
+    title: String!
+    taskList: TaskList @belongsTo
+    isComplete: Boolean! @default(value: "false")
 }

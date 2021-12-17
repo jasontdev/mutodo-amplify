@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <Layout>
       <Typography variant="body1" component="div" align="center">
-        Hello there, {auth.user.displayName}
       </Typography>
     </Layout>
   );
