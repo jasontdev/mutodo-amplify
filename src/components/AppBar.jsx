@@ -5,7 +5,7 @@ import {useAuth} from "../Auth";
 import {useNavigate} from "react-router";
 import AccountMenu from "./AccountMenu";
 
-export default function AppBar({menuOpen}) {
+export default function AppBar({menuOpen, heading}) {
   const auth = useAuth();
   const navigate = useNavigate();
 
@@ -25,9 +25,9 @@ export default function AppBar({menuOpen}) {
         <Button color="inherit" size="x-large">
           <MenuIcon/>
         </Button>
-        <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-          Mutodo
-        </Typography>
+        {heading? <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+          {heading}
+        </Typography> : <div></div>}
         {loginAndRegisterButtons()}
       </Toolbar>
     </MuiAppBar>
