@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Layout from "../components/Layout";
 import TaskListTabs from "../components/TaskListTabs";
-import {Box, Fab, Grid, useTheme} from "@mui/material";
+import {Box, Fab} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import TaskList from "../components/TaskList";
 
@@ -23,8 +23,6 @@ export default function Home() {
   function selectTaskList(value) {
     setSelectedTaskList(value);
   }
-
-  const theme = useTheme();
 
   return (
     <Layout heading="Tasks">

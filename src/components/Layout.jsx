@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Grid, Toolbar} from "@mui/material";
+import {Box, Toolbar} from "@mui/material";
 import AppBar from "./AppBar";
 
 export default function Layout({heading, children}) {
