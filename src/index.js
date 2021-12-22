@@ -10,7 +10,7 @@ import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
-document.title = 'mutodo';
+document.title = 'Mutodo';
 
 ReactDOM.render(
   <React.StrictMode>
