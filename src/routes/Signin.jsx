@@ -11,7 +11,7 @@ export default function Signin() {
     auth.signIn();
   }
 
-  if (auth.user) {
+  if (auth.user && !auth.loadingUser) {
     return <Navigate to={'/home'}/>
   }
 

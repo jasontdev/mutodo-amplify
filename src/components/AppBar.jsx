@@ -10,7 +10,7 @@ export default function AppBar({menuOpen, heading}) {
   const navigate = useNavigate();
 
   const loginAndRegisterButtons = () => {
-    if (auth.user) {
+    if (auth.user && !auth.loadingUser) {
       return <AccountMenu/>;
     } else {
       return (<div>

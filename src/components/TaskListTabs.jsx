@@ -6,7 +6,6 @@ export default function TaskListTabs({
                                        selected,
                                        handleSelection
                                      }) {
-
   return (
     <Tabs
       value={selected}

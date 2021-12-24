@@ -11,6 +11,7 @@ export function useAuth() {
 
 export function AuthProvider({children}) {
   const [user, setUser] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
 
   const signIn = () => {
     Auth.federatedSignIn(
@@ -22,36 +23,46 @@ export function AuthProvider({children}) {
     Auth.signOut().then(() => setUser(false));
   };
 
-  function getUser() {
-    return Auth.currentAuthenticatedUser().then(userData => userData);
-  }
-
   useEffect(() => {
+    function fetchUser() {
+      Auth.currentAuthenticatedUser()
+        .then((user) => {
+          setUser(user);
+          setLoadingUser(false);
+        })
+        .catch(() => {
+          setUser(null);
+          setLoadingUser(false);
+        });
+    }
+
     Hub.listen('auth', ({payload: {event, data}}) => {
       switch (event) {
         case 'signIn':
         case 'cognitoHostedUI':
-          setUser(getUser());
+          fetchUser();
           break;
         case 'signOut':
           setUser(null);
+          setLoadingUser(false);
           break;
         default:
-          console.log('Warning: unhandled auth event: ', event);
       }
     });
-    setUser(getUser());
+    fetchUser();
   }, []);
 
-  let value = {user, signIn, signOut};
-
+  let value = {user, loadingUser, signIn, signOut};
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export function RequireAuth({children}) {
   const auth = useAuth();
 
-  // this is triggering a redirect before the useEffect hook can load the authenticated user
+  if (auth.loadingUser) {
+    return <div>Loading...</div>
+  }
+
   if (!auth.user) {
     return <Navigate to="/signin"/>;
   } else {

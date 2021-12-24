@@ -5,6 +5,7 @@ import Signup from "./routes/Signup";
 import {AuthProvider, RequireAuth} from "./Auth";
 import Home from "./routes/Home";
 import SigninSuccess from "./routes/SigninSuccess";
+import AddTask from "./routes/AddTask";
 
 function App() {
   return (
@@ -24,6 +25,12 @@ function App() {
                 </RequireAuth>
               }
             />
+            <Route path="/add-task"
+                   element={
+                     <RequireAuth>
+                       <AddTask/>
+                     </RequireAuth>
+                   }/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
