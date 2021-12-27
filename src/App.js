@@ -3,9 +3,9 @@ import Welcome from "./routes/Welcome";
 import Signin from "./routes/Signin";
 import Signup from "./routes/Signup";
 import {AuthProvider, RequireAuth} from "./Auth";
-import Home from "./routes/Home";
 import SigninSuccess from "./routes/SigninSuccess";
-import AddTask from "./routes/AddTask";
+import CreateTask from "./routes/CreateTask";
+import TasksPage from "./routes/TasksPage";
 
 function App() {
   return (
@@ -18,17 +18,17 @@ function App() {
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/signin/success" element={<SigninSuccess/>}/>
             <Route
-              path="/home"
+              path="/tasks"
               element={
                 <RequireAuth>
-                  <Home/>
+                  <TasksPage/>
                 </RequireAuth>
               }
             />
-            <Route path="/add-task"
+            <Route path="/create-task"
                    element={
                      <RequireAuth>
-                       <AddTask/>
+                       <CreateTask/>
                      </RequireAuth>
                    }/>
           </Routes>
